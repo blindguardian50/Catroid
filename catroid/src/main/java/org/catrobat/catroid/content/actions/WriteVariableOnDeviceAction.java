@@ -68,11 +68,7 @@ public class WriteVariableOnDeviceAction extends AsynchronousAction {
 			DeviceVariableAccessor accessor = new DeviceVariableAccessor(projectDirectory);
 
 			for (UserVariable variable: userVariables) {
-				try {
-					accessor.writeUserData(variable);
-				} catch (IOException e) {
-					Log.e(TAG, e.getMessage());
-				}
+				accessor.writeUserData(variable);
 			}
 			return null;
 		}
